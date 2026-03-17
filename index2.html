@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renoria</title>
+
+<style>
+
+:root{
+--bg: #0d0c10;
+--bg-2: #15131b;
+--panel:rgba(30,26,38,0.82);
+--border:rgba(214,195,255,0.12);
+
+--text:#f3eef8;
+--muted:#b7aec8;
+
+--accent:#c5a7ff;
+--accent-soft:rgba(197,167,255,0.08);
+
+--shadow:rgba(0,0,0,0.32);
+--soft-line:rgba(255,255,255,0.05);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+margin:0;
+padding:0;
+min-height:100%;
+font-family:Inter,system-ui,sans-serif;
+
+background:
+radial-gradient(circle at top, rgba(140,110,220,0.08), transparent 30%),
+radial-gradient(circle at bottom, rgba(110,80,170,0.08), transparent 28%),
+linear-gradient(180deg,var(--bg),var(--bg-2));
+color:var(--text);
+}
+
+body{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:24px;
+}
+
+.frame{
+width:100%;
+max-width:940px;
+
+border:1px solid var(--border);
+border-radius:28px;
+
+background:var(--panel);
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 14px 50px var(--shadow),
+0 0 0 1px rgba(255,255,255,0.02) inset;
+
+overflow:hidden;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:16px 22px;
+
+border-bottom:1px solid var(--soft-line);
+
+font-size:0.82rem;
+letter-spacing:0.08em;
+text-transform:uppercase;
+color:var(--muted);
+}
+
+.status-wrap{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:999px;
+background:var(--accent);
+
+box-shadow:0 0 14px rgba(197,167,255,0.4);
+}
+
+.login-placeholder{
+padding:8px 12px;
+border-radius:999px;
+
+border:1px solid var(--soft-line);
+
+background:rgba(255,255,255,0.02);
+
+font-size:0.75rem;
+}
+
+.content{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+}
+
+.left,
+.right{
+padding:38px 34px;
+}
+
+.left{
+border-right:1px solid var(--soft-line);
+}
+
+.logo-box{
+
+height:150px;
+
+border-radius:20px;
+
+border:1px dashed rgba(197,167,255,0.25);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:var(--muted);
+
+letter-spacing:0.08em;
+text-transform:uppercase;
+
+margin-bottom:26px;
+}
+
+.intro{
+margin:0;
+max-width:520px;
+
+color:var(--muted);
+
+line-height:1.8;
+font-size:1.02rem;
+}
+
+.note{
+
+margin-top:26px;
+
+padding:18px 20px;
+
+border-radius:18px;
+
+background:var(--accent-soft);
+
+border:1px solid rgba(197,167,255,0.1);
+
+color:#e0d8f1;
+
+line-height:1.7;
+font-size:0.95rem;
+}
+
+.section-title{
+margin:0 0 16px;
+
+font-size:0.8rem;
+letter-spacing:0.10em;
+text-transform:uppercase;
+
+color:var(--muted);
+}
+
+.log{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.entry{
+padding:14px 16px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,0.02);
+
+border:1px solid var(--soft-line);
+}
+
+.timestamp{
+font-size:0.74rem;
+color:var(--muted);
+display:block;
+margin-bottom:6px;
+}
+
+.entry-text{
+font-size:0.94rem;
+line-height:1.6;
+}
+
+.footer{
+padding:0 34px 34px;
+}
+
+.pill{
+
+display:inline-flex;
+
+padding:12px 16px;
+
+border-radius:999px;
+
+border:1px solid var(--border);
+
+background:rgba(255,255,255,0.02);
+
+color:var(--text);
+
+text-decoration:none;
+
+transition:160ms ease;
+}
+
+.pill:hover{
+
+background:rgba(197,167,255,0.08);
+border-color:rgba(197,167,255,0.22);
+
+transform:translateY(-1px);
+}
+
+@media (max-width:820px){
+
+.content{
+grid-template-columns:1fr;
+}
+
+.left{
+border-right:0;
+border-bottom:1px solid var(--soft-line);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="frame">
+
+<div class="topbar">
+
+<div class="status-wrap">
+<div class="dot"></div>
+<span>Node Online</span>
+<span>/</span>
+<span>Renoria</span>
+</div>
+
+<div class="login-placeholder">
+Login / future module
+</div>
+
+</div>
+
+
+<section class="content">
+
+<div class="left">
+
+<div class="logo-box">
+Logo module pending
+</div>
+
+<p class="intro">
+A personal digital space in gradual construction.
+Portfolio, skills, project threads, and system modules will surface here over time.
+</p>
+
+<div class="note">
+This page is a temporary prelude.<br>
+The full interface is currently being assembled.
+</div>
+
+</div>
+
+
+<div class="right">
+
+<h2 class="section-title">Current log</h2>
+
+<div class="log">
+
+<div class="entry">
+<span class="timestamp">[16/03/2026 22:46]</span>
+<div class="entry-text">
+Domain secured and public node initialized.
+</div>
+</div>
+
+<div class="entry">
+<span class="timestamp">[17/03/2026 09:21]</span>
+<div class="entry-text">
+Primary contact channel connected to the Renoria system.
+</div>
+</div>
+
+<div class="entry">
+<span class="timestamp">[17/03/2026 10:50]</span>
+<div class="entry-text">
+Portfolio shell in development. Additional modules pending.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="footer">
+<a class="pill" href="mailto:hello@renoria.dev">
+hello@renoria.dev
+</a>
+</div>
+
+</main>
+
+</body>
+</html>
