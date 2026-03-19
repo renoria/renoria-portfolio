@@ -247,3 +247,17 @@ body {
     padding: 18px;
   }
 }
+
+.main-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0 4px;
+}
+
+.main-hero img {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  max-width: 340px;
+}
