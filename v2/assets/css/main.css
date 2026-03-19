@@ -61,6 +61,20 @@ body {
   min-height: 0;
 }
 
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 .sidebar,
 .main-column,
 .right-column {
