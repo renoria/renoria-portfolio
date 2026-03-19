@@ -238,3 +238,26 @@ body {
     padding: 18px;
   }
 }
+
+.console {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  line-height: 1.6;
+}
+
+.console-line {
+  margin-bottom: 10px;
+}
+
+.console-prefix {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.console-command {
+  color: var(--text);
+}
+
+.console-output {
+  color: var(--muted);
+  margin-left: 2px;
+}
