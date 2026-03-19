@@ -6,17 +6,13 @@
   <title>Renoria - Main</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/icons/Logo_R.svg">
-
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/main.css">
-
   <script src="../assets/js/main.js" defer></script>
 </head>
-
 <body>
 
   <main class="main-frame">
-
     <header class="topbar">
       <div class="status-wrap">
         <div class="dot"></div>
@@ -30,73 +26,74 @@
 
     <section class="main-layout">
 
-      <aside class="sidebar panel">
+      <aside class="sidebar">
+        <div class="panel">
+          <h2 class="section-title">Navigation</h2>
 
-        <h2 class="section-title">Navigation</h2>
+          <nav class="sidebar-nav">
+            <a href="#">Home</a>
+          </nav>
 
-        <nav class="sidebar-nav">
-          <a href="#">System overview</a>
-          <a href="#">Project threads</a>
-          <a href="#">Status</a>
-          <a href="#">Office</a>
-          <a href="#">Archive</a>
-        </nav>
+          <div class="side-group">
+            <div class="side-label">Admin</div>
+            <button class="sidebar-button" type="button">Add log</button>
+            <button class="sidebar-button" type="button">Open admin tools</button>
+          </div>
+        </div>
 
+        <div class="panel side-bottom">
+          <h2 class="section-title">Present</h2>
+
+          <div class="presence-list">
+            <div class="presence-item">Renoria / online</div>
+            <div class="presence-item">System node / active</div>
+            <div class="presence-item">Visitor slot / empty</div>
+          </div>
+        </div>
       </aside>
 
-
       <section class="main-column">
-
         <div class="panel">
-
-          <h2 class="section-title">System overview</h2>
-
+          <h2 class="section-title">Homepage</h2>
           <p class="panel-text">
             Internal Renoria interface in construction.
             Core modules, portfolio threads, and status panels will be assembled here.
           </p>
-
         </div>
 
-
         <div class="panel">
-
           <h2 class="section-title">Active missions</h2>
 
           <div class="entry">
-
             <div class="entry-header">
               <span class="timestamp">[2026-03-19 10:40]</span>
               <span class="log-type">MISSION</span>
             </div>
-
             <div class="entry-text">
               Build the internal dashboard structure and prepare reusable UI panels.
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-
       <aside class="right-column">
-
         <div class="panel">
-
           <h2 class="section-title">Status</h2>
-
           <p class="panel-text">Interface build: ongoing</p>
           <p class="panel-text">Modules online: landing, logs</p>
           <p class="panel-text">Next target: dashboard shell</p>
-
         </div>
 
+        <div class="panel">
+          <h2 class="section-title">Access nodes</h2>
+          <nav class="sidebar-nav">
+            <a href="#">Office</a>
+            <a href="#">Forum</a>
+          </nav>
+        </div>
       </aside>
 
     </section>
-
   </main>
 
 </body>
