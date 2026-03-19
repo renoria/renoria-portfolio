@@ -21,8 +21,10 @@ async function loadLogs() {
       const typeLabel = log.type ? log.type.toUpperCase() : "LOG";
 
       entry.innerHTML = `
+        <div class="entry-header">
         <span class="timestamp">[${log.timestamp}]</span>
         <span class="log-type">${typeLabel}</span>
+        </div>
         <div class="entry-text">${log.text}</div>
       `;
 
