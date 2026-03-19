@@ -12,12 +12,17 @@ async function loadLogs() {
 
     const logs = await response.json();
 
+    logContainer.innerHTML = "";
+
     logs.forEach((log) => {
       const entry = document.createElement("div");
       entry.className = "entry";
 
+      const typeLabel = log.type ? log.type.toUpperCase() : "LOG";
+
       entry.innerHTML = `
-        <span class="timestamp">${log.timestamp}</span>
+        <span class="timestamp">[${log.timestamp}]</span>
+        <span class="log-type">${typeLabel}</span>
         <div class="entry-text">${log.text}</div>
       `;
 
@@ -30,6 +35,7 @@ async function loadLogs() {
     logContainer.innerHTML = `
       <div class="entry">
         <span class="timestamp">[system]</span>
+        <span class="log-type">ERROR</span>
         <div class="entry-text">
           Unable to load current log data.
         </div>
