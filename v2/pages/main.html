@@ -50,60 +50,78 @@
 
       <section class="main-column">
 
-          <div class="panel console">
+  <div class="main-grid">
 
-      <div class="console-line">
-        <span class="console-prefix">renoria@node</span>
-        <span class="console-command">system status</span>
+    <div class="panel console-panel">
+      <h2 class="section-title">Terminal</h2>
+
+      <div class="terminal-window" id="terminal-output">
+        <div class="console-line">
+          <span class="console-prefix">renoria@node</span>
+          <span class="console-command">boot sequence</span>
+        </div>
       </div>
-
-      <div class="console-output">
-        Interface shell initialized.
-      </div>
-
-      <div class="console-output">
-        Module structure stabilizing.
-      </div>
-
-      <div class="console-output">
-        Awaiting additional nodes.
-      </div>
-
     </div>
 
+    <div class="panel">
+      <h2 class="section-title">System snapshot</h2>
 
-    <div class="main-grid">
+      <div class="snapshot-list">
+        <div class="snapshot-item">
+          <span class="snapshot-label">Interface</span>
+          <span class="snapshot-value">online</span>
+        </div>
 
-      <div class="panel">
-        <h2 class="section-title">Current operations</h2>
+        <div class="snapshot-item">
+          <span class="snapshot-label">Shell</span>
+          <span class="snapshot-value">stable</span>
+        </div>
 
-        <div class="entry">
-          <span class="timestamp">[2026-03-19]</span>
+        <div class="snapshot-item">
+          <span class="snapshot-label">Modules</span>
+          <span class="snapshot-value">loading</span>
+        </div>
+
+        <div class="snapshot-item">
+          <span class="snapshot-label">Node</span>
+          <span class="snapshot-value">renoria</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="section-title">Current operations</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="timestamp">[2026-03-19 21:40]</span>
           <span class="log-type">SYSTEM</span>
-          <div class="entry-text">
-            Main interface shell stabilized.
-          </div>
         </div>
 
-      </div>
-
-
-      <div class="panel">
-        <h2 class="section-title">Active missions</h2>
-
-        <div class="entry">
-          <span class="timestamp">[2026-03-19]</span>
-          <span class="log-type">MISSION</span>
-          <div class="entry-text">
-            Define homepage console and dashboard layout.
-          </div>
+        <div class="entry-text">
+          Main interface shell stabilized.
         </div>
-
       </div>
-
     </div>
 
-      </section>
+    <div class="panel">
+      <h2 class="section-title">Active missions</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="timestamp">[2026-03-19 21:45]</span>
+          <span class="log-type">MISSION</span>
+        </div>
+
+        <div class="entry-text">
+          Define homepage console and dashboard layout.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
       <aside class="right-column">
         <div class="panel">
