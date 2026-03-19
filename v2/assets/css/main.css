@@ -131,6 +131,7 @@ body {
 
 .log-panel .log {
   max-height: 220px;
+  padding-right: 4px;
 }
 
 .panel-heading {
