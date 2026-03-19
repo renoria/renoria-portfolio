@@ -73,16 +73,11 @@ body {
   border-right: 1px solid var(--soft-line);
   display: flex;
   flex-direction: column;
-  padding-top: 24px;
-  padding-bottom: 36px;
+  gap: 20px;
 }
 
 .main-column {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
   overflow: hidden;
 }
 
@@ -90,8 +85,7 @@ body {
   border-left: 1px solid var(--soft-line);
   display: flex;
   flex-direction: column;
-  padding-top: 24px;
-  padding-bottom: 36px;
+  gap: 20px;
 }
 
 .left-actions,
@@ -100,12 +94,19 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+}
+
+.left-actions {
+  margin-top: 4px;
+}
+
+.right-actions {
   flex: 1;
-  padding-top: 12px;
+  justify-content: center;
 }
 
 .side-bottom {
-  margin-top: 40px;
+  margin-top: auto;
 }
 
 .panel {
@@ -118,6 +119,14 @@ body {
 .action-panel {
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.terminal-panel {
+  flex-shrink: 0;
+}
+
+.log-panel {
+  flex-shrink: 0;
 }
 
 .panel-heading {
@@ -193,53 +202,7 @@ body {
   text-shadow: 0 0 10px rgba(197, 167, 255, 0.18);
 }
 
-.main-background-logo {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.main-background-logo img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  opacity: 0.18;
-  filter: drop-shadow(0 0 20px rgba(197, 167, 255, 0.08));
-  user-select: none;
-}
-
-.main-overlay {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
-
-.main-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: stretch;
-}
-
-.main-grid .panel {
-  min-height: 320px;
-  backdrop-filter: blur(2px);
-}
-
-.console-panel {
-  display: flex;
-  flex-direction: column;
-}
-
 .terminal-window {
-  margin-top: 4px;
   padding: 14px 16px;
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.18);
@@ -247,7 +210,6 @@ body {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   line-height: 1.7;
   color: var(--muted);
-  flex: 1;
   overflow-y: auto;
 }
 
@@ -268,18 +230,26 @@ body {
   color: var(--muted);
 }
 
-.main-hero {
+.main-background-logo {
+  position: absolute;
+  inset: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 12px 0 4px;
+  justify-content: center;
+  padding: 24px;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.main-hero img {
-  display: block;
-  width: min(100%, 340px);
-  height: auto;
-  max-width: 340px;
+.main-background-logo img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.18;
+  filter: drop-shadow(0 0 20px rgba(197, 167, 255, 0.08));
+  user-select: none;
 }
 
 @media (max-width: 1080px) {
@@ -313,11 +283,10 @@ body {
   .side-bottom {
     margin-top: 0;
   }
-}
 
-@media (max-width: 900px) {
-  .main-grid {
-    grid-template-columns: 1fr;
+  .right-actions {
+    flex: unset;
+    justify-content: flex-start;
   }
 }
 
