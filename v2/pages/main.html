@@ -27,6 +27,22 @@
     <section class="main-layout">
 
       <aside class="sidebar">
+
+        <div class="panel terminal-panel">
+          <div class="panel-heading">
+            <h2 class="section-title">Terminal</h2>
+          </div>
+
+          <div class="terminal-window" id="terminal-output">
+            <div class="console-line">
+              <span class="console-prefix">renoria@node</span>
+              <span class="console-command">system idle</span>
+            </div>
+
+            <div class="console-output">Awaiting module input...</div>
+          </div>
+        </div>
+
         <div class="left-actions">
           <div class="panel action-panel">
             <nav class="sidebar-nav">
@@ -81,6 +97,14 @@
               <a href="#">Office</a>
             </nav>
           </div>
+        </div>
+
+        <div class="panel log-panel">
+          <div class="panel-heading">
+            <h2 class="section-title">Current log</h2>
+          </div>
+
+          <div class="log" id="main-log-container"></div>
         </div>
       </aside>
 
