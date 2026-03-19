@@ -1,26 +1,37 @@
 [
   {
-    "timestamp": "[18/03/2026 21:25]",
+    "timestamp": "2026-03-19 12:13",
+    "type": "system",
+    "text": "Log structure upgraded to ISO-8601 format. Event typing enabled for Renoria interface v2."
+  },
+  {
+    "timestamp": "2026-03-18 21:25",
+    "type": "system",
     "text": "System structure stabilized. Core layout and component order defined for Renoria interface v2."
   },
   {
-    "timestamp": "[18/03/2026 13:09]",
+    "timestamp": "2026-03-18 13:09",
+    "type": "network",
     "text": "Custom domains renoria.dev and renoria.it linked to the Renoria node. DNS routing operational."
   },
   {
-    "timestamp": "[17/03/2026 21:21]",
+    "timestamp": "2026-03-17 21:21",
+    "type": "dev",
     "text": "Logo assets integrated. Visual identity module attached to the Renoria node."
   },
   {
-    "timestamp": "[17/03/2026 10:50]",
+    "timestamp": "2026-03-17 10:50",
+    "type": "dev",
     "text": "Portfolio shell in development. Additional modules pending."
   },
   {
-    "timestamp": "[17/03/2026 09:21]",
+    "timestamp": "2026-03-17 09:21",
+    "type": "network",
     "text": "Primary contact gateway connected to Renoria node."
   },
   {
-    "timestamp": "[16/03/2026 22:46]",
+    "timestamp": "2026-03-16 22:46",
+    "type": "system",
     "text": "Domain secured and public node initialized."
   }
 ]
