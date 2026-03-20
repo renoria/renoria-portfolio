@@ -355,3 +355,10 @@ body {
   margin: 0 0 4px;
   color: rgba(243, 238, 248, 0.70);
 }
+
+.status-panel,
+.presence-panel,
+.log-panel {
+  background: var(--accent-soft);
+  border: 1px solid rgba(197, 167, 255, 0.1);
+}
