@@ -1,3 +1,7 @@
+// ========================
+// LOAD MAIN LOGS
+// ========================
+
 async function loadMainLogs() {
   const container = document.getElementById("main-log-container");
 
@@ -37,5 +41,55 @@ async function loadMainLogs() {
   }
 }
 
+// ========================
+// MODULE VIEW LOADER
+// ========================
+
+const moduleContainer = document.getElementById("module-container");
+const viewLinks = document.querySelectorAll("[data-view]");
+
+async function loadView(viewName) {
+  try {
+    const response = await fetch(`views/${viewName}.html`);
+
+    if (!response.ok) {
+      throw new Error(`Unable to load view: ${viewName}`);
+    }
+
+    const html = await response.text();
+
+    moduleContainer.innerHTML = html;
+
+  } catch (error) {
+    console.error(error);
+
+    moduleContainer.innerHTML = `
+      <div class="module-error">
+        <h2>Module error</h2>
+        <p>Unable to load requested module.</p>
+      </div>
+    `;
+  }
+}
+
+// click sui pulsanti
+viewLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const viewName = link.dataset.view;
+
+    if (!viewName) return;
+
+    loadView(viewName);
+  });
+});
+
+// ========================
+// INIT
+// ========================
+
 console.log("Renoria main interface initialized.");
+
 loadMainLogs();
+loadView("home");
