@@ -4,7 +4,7 @@ async function loadMainLogs() {
   if (!container) return;
 
   try {
-    const response = await fetch("../assets/data/logs.json");
+    const response = await fetch("assets/data/logs.json");
 
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
