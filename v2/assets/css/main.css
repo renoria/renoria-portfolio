@@ -222,11 +222,11 @@ body {
   padding: 0;
   background: transparent;
   border: 0;
-  color: rgba(243, 238, 248, 0.78);
+  color: rgba(243, 238, 248, 0.74);
   text-decoration: none;
   cursor: pointer;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.74rem;
+  line-height: 1.4;
   transition: color 160ms ease, text-shadow 160ms ease;
 }
 
@@ -354,8 +354,8 @@ body {
 
 .status-panel .panel-text {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.74rem;
-  line-height: 1.45;
+  font-size: 0.72rem;
+  line-height: 1.4;
   margin: 0 0 4px;
   color: rgba(243, 238, 248, 0.70);
 }
