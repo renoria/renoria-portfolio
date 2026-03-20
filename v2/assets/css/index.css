@@ -57,7 +57,9 @@ body {
 }
 
 .left {
-    border-right: 1px solid var(--soft-line);
+  border-right: 1px solid var(--soft-line);
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-box img {
@@ -89,7 +91,8 @@ body {
 }
 
 .footer {
-  padding: 0 34px 34px;
+  margin-top: auto;
+  padding-top: 32px;
 }
 
 @media (max-width: 820px) {
