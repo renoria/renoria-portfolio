@@ -1,0 +1,73 @@
+.boards-view {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: 36px 24px 44px;
+}
+
+.boards-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.boards-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.boards-group {
+  margin-bottom: 34px;
+}
+
+.boards-group-title {
+  margin: 0 0 14px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cbb8ef;
+}
+
+.board-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  padding: 16px 22px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(197, 167, 255, 0.10);
+  text-align: center;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.board-row:hover {
+  background: rgba(197, 167, 255, 0.12);
+  border-color: rgba(197, 167, 255, 0.16);
+  box-shadow: 0 0 14px rgba(197, 167, 255, 0.06);
+}
+
+.board-name {
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.board-description {
+  margin-top: 6px;
+  color: rgba(243, 238, 248, 0.55);
+  font-size: 0.74rem;
+  font-style: italic;
+  line-height: 1.4;
+}
