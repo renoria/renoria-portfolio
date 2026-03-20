@@ -73,7 +73,7 @@ body {
   border-right: 1px solid var(--soft-line);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
 .main-column {
@@ -85,7 +85,7 @@ body {
   border-left: 1px solid var(--soft-line);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
 .left-actions,
@@ -93,7 +93,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .left-actions {
@@ -110,15 +110,15 @@ body {
 }
 
 .panel {
-  padding: 22px;
-  border-radius: 22px;
+  padding: 16px 18px;
+  border-radius: 20px;
   background: rgba(30, 26, 38, 0.62);
   border: 1px solid var(--soft-line);
 }
 
 .action-panel {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .terminal-panel {
@@ -148,8 +148,8 @@ body {
 }
 
 .panel-heading {
-  margin-bottom: 16px;
-  padding-bottom: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 1px solid rgba(183, 174, 200, 0.14);
 }
 
@@ -159,9 +159,10 @@ body {
 }
 
 .panel-text {
-  margin: 0 0 12px;
-  color: rgba(243, 238, 248, 0.78);
-  line-height: 1.7;
+  margin: 0 0 8px;
+  color: rgba(243, 238, 248, 0.74);
+  line-height: 1.45;
+  font-size: 0.92rem;
 }
 
 .sidebar-nav {
@@ -174,7 +175,7 @@ body {
 .sidebar-button {
   display: block;
   width: 100%;
-  padding: 6px 0;
+  padding: 4px 0;
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -182,9 +183,9 @@ body {
   text-decoration: none;
   text-align: center;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 160ms ease, text-shadow 160ms ease;
