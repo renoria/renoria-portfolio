@@ -153,12 +153,12 @@ body {
 }
 
 .log-panel .entry-main .timestamp {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
 }
 
 .log-panel .entry-main .entry-text {
-  font-size: 0.78rem;
-  line-height: 1.45;
+  font-size: 0.72rem;
+  line-height: 1.4;
 }
 
 .panel-heading {
@@ -214,7 +214,7 @@ body {
 .presence-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .presence-item {
@@ -226,7 +226,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   font-size: 0.74rem;
-  line-height: 1.4;
+  line-height: 1.35;
   transition: color 160ms ease, text-shadow 160ms ease;
 }
 
