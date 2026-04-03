@@ -360,6 +360,27 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
   }
 }
 
+const sendBtn = document.getElementById("btn-send-reply");
+const textarea = document.getElementById("reply-input");
+
+if (sendBtn && textarea) {
+  sendBtn.addEventListener("click", () => {
+    const text = textarea.value.trim();
+
+    if (!text) return;
+
+    console.log("Mock reply:", text);
+
+    textarea.value = "";
+
+    // 👇 opzionale: feedback visivo
+    sendBtn.textContent = "Sent";
+    setTimeout(() => {
+      sendBtn.textContent = "Send";
+    }, 1200);
+  });
+}
+
 // ========================
 // MODULE VIEW LOADER
 // ========================
