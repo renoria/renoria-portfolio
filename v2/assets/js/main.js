@@ -287,9 +287,6 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
 
     const pathEl = document.getElementById("thread-path");
     const titleEl = document.getElementById("thread-title");
-    const kindEl = document.getElementById("thread-kind");
-    const statusEl = document.getElementById("thread-status");
-    const createdEl = document.getElementById("thread-created");
     const postsContainer = document.getElementById("posts-container");
 
     const backBtn = document.getElementById("btn-back-board");
@@ -301,9 +298,6 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
     }
 
     if (titleEl) titleEl.textContent = threadData.title.toUpperCase();
-    if (kindEl) kindEl.textContent = threadData.kind || "thread";
-    if (statusEl) statusEl.textContent = threadData.status || "open";
-    if (createdEl) createdEl.innerHTML = formatBoardDate(threadData.createdAt);
 
     if (backBtn) {
       backBtn.addEventListener("click", () => {
@@ -326,24 +320,24 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
     if (postsContainer) {
       postsContainer.innerHTML = "";
 
-      threadData.posts.forEach((post, index) => {
+      threadData.posts.forEach((post) => {
         const article = document.createElement("article");
         article.className = "forum-post";
 
         const paragraphs = Array.isArray(post.content)
-          ? post.content.map(p => `<p>${p}</p>`).join("")
+          ? post.content.map((p) => `<p>${p}</p>`).join("")
           : `<p>${post.content}</p>`;
 
         article.innerHTML = `
           <aside class="post-side">
             <div class="post-author">${post.author}</div>
+            <div class="post-avatar" aria-hidden="true"></div>
             <div class="post-role">${post.role || "User"}</div>
           </aside>
 
           <div class="post-main">
             <div class="post-topbar">
               <span class="post-date">${formatBoardDate(post.createdAt)}</span>
-              <span class="post-id">#${index + 1}</span>
             </div>
 
             <div class="post-content">
