@@ -205,24 +205,27 @@
   padding: 10px 0;
 }
 
+.thread-view .reply-inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .thread-view .reply-header {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(243, 238, 248, 0.55);
+  color: var(--muted);
   margin-bottom: 10px;
 }
 
 .thread-view .reply-textarea {
-  width: 80%;
+  width: 100%;
   min-height: 90px;
   resize: vertical;
 
-  margin: 0 auto; /* 👈 centrata */
-
   display: block;
 
-  padding: 10px 12px;
+  padding: 12px;
   border-radius: 10px;
 
   background: rgba(30, 26, 38, 0.4);
@@ -241,8 +244,7 @@
 }
 
 .thread-view .reply-actions {
-  width: 80%;
-  margin: 10px auto 0;
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
 }
