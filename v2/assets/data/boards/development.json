@@ -5,7 +5,7 @@
   "threads": [
     {
       "id": "thread-001",
-      "title": "Architettura del forum",
+      "title": "Forum Architecture",
       "author": "Renoria",
       "createdAt": "2026-03-20 13:50",
       "status": "open",
@@ -20,7 +20,7 @@
     },
     {
       "id": "thread-002",
-      "title": "Missione attuale",
+      "title": "Current Mission",
       "author": "Renoria",
       "createdAt": "2026-03-20 15:30",
       "status": "open",
@@ -32,7 +32,7 @@
     },
     {
       "id": "thread-003",
-      "title": "Bug & anomalie note",
+      "title": "Known Issues & Bugs",
       "author": "Renoria",
       "createdAt": "2026-03-20 16:00",
       "status": "open",
