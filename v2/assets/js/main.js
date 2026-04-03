@@ -62,6 +62,28 @@ function getLastReplyDate(lastReply) {
   return lastReply.createdAt || lastReply.date || null;
 }
 
+async function openBoardFromHash(boardId) {
+  try {
+    const response = await fetch("assets/data/boards.json");
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+    const groups = await response.json();
+
+    for (const group of groups) {
+      const board = group.boards.find((b) => b.id === boardId);
+
+      if (board) {
+        await loadBoardView(board.id, board.name, group.group);
+        return;
+      }
+    }
+
+    console.warn(`Board not found for hash: ${boardId}`);
+  } catch (error) {
+    console.error("Error opening board from hash:", error);
+  }
+}
+
 // ========================
 // LOAD BOARDS
 // ========================
@@ -129,6 +151,11 @@ async function loadBoardView(boardId, boardName, groupName) {
     moduleContainer.innerHTML = html;
 
     updateTopbar("boards");
+
+    if (window.location.hash !== `#boards-${boardId}`) {
+      updateHash(`boards-${boardId}`);
+    }
+
     loadBoardThreads(boardId, boardName, groupName);
   } catch (error) {
     console.error("Error loading board view:", error);
@@ -281,7 +308,13 @@ function updateHash(viewName) {
 }
 
 async function loadView(viewName, updateUrl = true) {
-  const safeView = validViews.includes(viewName) ? viewName : "home";
+  let safeView = viewName;
+
+  if (viewName.startsWith("boards-")) {
+    safeView = "boards";
+  } else if (!validViews.includes(viewName)) {
+    safeView = "home";
+  }
 
   try {
     const response = await fetch(`views/${safeView}.html`);
@@ -293,12 +326,23 @@ async function loadView(viewName, updateUrl = true) {
     const html = await response.text();
     moduleContainer.innerHTML = html;
 
-    if (safeView === "boards") loadBoards();
+    if (safeView === "boards") {
+      await loadBoards();
+
+      if (viewName.startsWith("boards-")) {
+        const boardId = viewName.replace("boards-", "");
+        await openBoardFromHash(boardId);
+      }
+    }
 
     updateTopbar(safeView);
 
     if (updateUrl) {
-      updateHash(safeView);
+      if (viewName.startsWith("boards-")) {
+        updateHash(viewName);
+      } else {
+        updateHash(safeView);
+      }
     }
   } catch (error) {
     console.error(error);
@@ -313,7 +357,11 @@ async function loadView(viewName, updateUrl = true) {
     updateTopbar(safeView);
 
     if (updateUrl) {
-      updateHash(safeView);
+      if (viewName.startsWith("boards-")) {
+        updateHash(viewName);
+      } else {
+        updateHash(safeView);
+      }
     }
   }
 }
@@ -346,4 +394,9 @@ loadMainLogs();
 
 const initialView = window.location.hash.replace("#", "") || "home";
 loadView(initialView, false);
-updateHash(validViews.includes(initialView) ? initialView : "home");
+
+if (validViews.includes(initialView) || initialView.startsWith("boards-")) {
+  updateHash(initialView);
+} else {
+  updateHash("home");
+}
