@@ -1,0 +1,21 @@
+{
+  "id": "thread-001",
+  "boardId": "development",
+  "title": "Architettura del forum",
+  "kind": "system",
+  "status": "open",
+  "createdAt": "2026-03-20 13:50",
+  "posts": [
+    {
+      "id": "post-001",
+      "author": "Renoria",
+      "role": "System Owner",
+      "createdAt": "2026-03-20 13:50",
+      "content": [
+        "This thread documents the current architecture of the forum system.",
+        "The current structure is based on boards, board-specific thread lists and dedicated thread data files.",
+        "Future evolution will likely move toward PHP, sessions and dynamic post creation."
+      ]
+    }
+  ]
+}
