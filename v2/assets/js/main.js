@@ -42,6 +42,27 @@ async function loadMainLogs() {
 }
 
 // ========================
+// HELPERS
+// ========================
+
+function formatBoardDate(dateString) {
+  if (!dateString) return "—";
+
+  const [datePart, timePart] = dateString.split(" ");
+  if (!datePart || !timePart) return dateString;
+
+  const [year, month, day] = datePart.split("-");
+  if (!year || !month || !day) return dateString;
+
+  return `${day}/${month}/${year} <span class="date-separator">•</span> ${timePart}`;
+}
+
+function getLastReplyDate(lastReply) {
+  if (!lastReply) return null;
+  return lastReply.createdAt || lastReply.date || null;
+}
+
+// ========================
 // LOAD BOARDS
 // ========================
 
@@ -128,8 +149,12 @@ async function loadBoardThreads(boardId, boardName, groupName) {
   const homeBoardsBtn = document.getElementById("btn-home-boards");
   const newThreadBtn = document.getElementById("btn-new-thread");
 
-  if (titleEl) titleEl.textContent = boardName;
-  if (pathEl) pathEl.textContent = `Boards / ${groupName}`;
+  if (titleEl) titleEl.textContent = boardName.toUpperCase();
+
+  if (pathEl) {
+    pathEl.innerHTML = `<span class="path-dim">Boards</span> / ${groupName}`;
+  }
+
   if (backBtn) backBtn.textContent = "↩ Back";
 
   if (backBtn) {
@@ -172,11 +197,12 @@ async function loadBoardThreads(boardId, boardName, groupName) {
 
     threads.forEach((thread) => {
       const row = document.createElement("tr");
+      const lastReplyDate = getLastReplyDate(thread.lastReply);
 
       row.innerHTML = `
         <td>
           <div class="author-name">${thread.author}</div>
-          <div class="author-date">${thread.createdAt}</div>
+          <div class="author-date">${formatBoardDate(thread.createdAt)}</div>
         </td>
         <td class="col-status">
           <span class="status-dot ${thread.status}"></span>
@@ -188,9 +214,9 @@ async function loadBoardThreads(boardId, boardName, groupName) {
         <td class="col-replies">${thread.replies}</td>
         <td>
           ${
-            thread.lastReply
+            thread.lastReply && lastReplyDate
               ? `<div class="last-reply-name">${thread.lastReply.author}</div>
-                 <div class="last-reply-date">${thread.lastReply.createdAt}</div>`
+                 <div class="last-reply-date">${formatBoardDate(lastReplyDate)}</div>`
               : `<span class="no-reply">—</span>`
           }
         </td>
