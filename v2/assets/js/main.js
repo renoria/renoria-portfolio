@@ -54,7 +54,7 @@ function formatBoardDate(dateString) {
   const [year, month, day] = datePart.split("-");
   if (!year || !month || !day) return dateString;
 
-  return `${day}/${month}/${year} <span class="date-separator">•</span> ${timePart}`;
+  return `${day}/${month}/${year}<span class="date-separator">•</span>${timePart}`;
 }
 
 function getLastReplyDate(lastReply) {
