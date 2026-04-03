@@ -118,34 +118,19 @@
   color: var(--text);
 }
 
-.board-view .board-table th:nth-child(1),
-.board-view .board-table td:nth-child(1) {
-  width: 22%;
-  text-align: center;
-}
-
-.board-view .board-table th:nth-child(2),
-.board-view .board-table td:nth-child(2) {
-  width: 8%;
-  text-align: center;
-}
-
-.board-view .board-table th:nth-child(3),
-.board-view .board-table td:nth-child(3) {
-  width: 38%;
-  text-align: center;
-}
-
-.board-view .board-table th:nth-child(4),
-.board-view .board-table td:nth-child(4) {
-  width: 7%;
-  text-align: center;
-}
-
-.board-view .board-table th:nth-child(5),
+.board-view .board-table thead th:nth-child(2),
+.board-view .board-table thead th:nth-child(4),
+.board-view .board-table thead th:nth-child(5),
+.board-view .board-table td:nth-child(2),
+.board-view .board-table td:nth-child(4),
 .board-view .board-table td:nth-child(5) {
-  width: 25%;
   text-align: center;
+}
+
+.board-view .board-table td:nth-child(4) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.70rem;
+  color: rgba(243, 238, 248, 0.62);
 }
 
 .board-view .author-name,
@@ -164,6 +149,12 @@
   font-size: 0.70rem;
   line-height: 1.35;
   color: rgba(243, 238, 248, 0.62);
+  white-space: nowrap;
+}
+
+.board-view .last-reply-name,
+.board-view .last-reply-date {
+  white-space: nowrap;
 }
 
 .board-view .date-separator {
@@ -219,7 +210,7 @@
 }
 
 .board-view .col-replies {
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 400;
   color: rgba(243, 238, 248, 0.62);
 }
