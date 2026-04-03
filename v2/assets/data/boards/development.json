@@ -1,0 +1,40 @@
+{
+  "id": "development",
+  "name": "Development",
+  "group": "Portfolio",
+  "threads": [
+    {
+      "id": "thread-001",
+      "title": "Architettura del forum",
+      "author": "Renoria",
+      "date": "2026-03-20 13:50",
+      "status": "open",
+      "pinned": false,
+      "important": true,
+      "replies": 0,
+      "lastReply": null
+    },
+    {
+      "id": "thread-002",
+      "title": "Missione attuale",
+      "author": "Renoria",
+      "date": "2026-03-20 15:30",
+      "status": "open",
+      "pinned": false,
+      "important": false,
+      "replies": 0,
+      "lastReply": null
+    },
+    {
+      "id": "thread-003",
+      "title": "Bug & anomalie note",
+      "author": "Renoria",
+      "date": "2026-03-20 16:00",
+      "status": "open",
+      "pinned": false,
+      "important": false,
+      "replies": 0,
+      "lastReply": null
+    }
+  ]
+}
