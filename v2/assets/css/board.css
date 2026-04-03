@@ -93,7 +93,7 @@
 }
 
 .board-view .board-table thead th {
-  text-align: left;
+  text-align: center;
   font-size: 0.64rem;
   font-weight: 400;
   letter-spacing: 0.02em;
