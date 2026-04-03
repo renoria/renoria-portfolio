@@ -19,18 +19,23 @@
 .board-view .location-path {
   margin: 0 0 6px;
   font-size: 0.62rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #8c78ba;
+}
+
+.board-view .location-path .path-dim {
+  color: rgba(140, 120, 186, 0.58);
 }
 
 .board-view .location-name {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.42rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: rgba(243, 238, 248, 0.92);
+  font-size: 1.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(243, 238, 248, 0.94);
 }
 
 .board-view .board-separator {
@@ -89,11 +94,11 @@
 
 .board-view .board-table thead th {
   text-align: left;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 400;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: rgba(243, 238, 248, 0.58);
+  color: rgba(243, 238, 248, 0.54);
   padding: 0 12px 10px;
   border-bottom: 1px solid rgba(197, 167, 255, 0.08);
 }
@@ -115,7 +120,7 @@
 
 .board-view .board-table th:nth-child(1),
 .board-view .board-table td:nth-child(1) {
-  width: 27%;
+  width: 24%;
 }
 
 .board-view .board-table th:nth-child(2),
@@ -126,18 +131,18 @@
 
 .board-view .board-table th:nth-child(3),
 .board-view .board-table td:nth-child(3) {
-  width: 34%;
+  width: 37%;
 }
 
 .board-view .board-table th:nth-child(4),
 .board-view .board-table td:nth-child(4) {
-  width: 10%;
+  width: 9%;
   text-align: center;
 }
 
 .board-view .board-table th:nth-child(5),
 .board-view .board-table td:nth-child(5) {
-  width: 19%;
+  width: 20%;
 }
 
 .board-view .author-name,
@@ -160,10 +165,18 @@
   */
 }
 
+.board-view .date-separator {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 0.58rem;
+  color: rgba(243, 238, 248, 0.36);
+  vertical-align: middle;
+}
+
 .board-view .thread-title {
   font-size: 0.82rem;
   font-weight: 400;
-  color: rgba(243, 238, 248, 0.76);
+  color: rgba(243, 238, 248, 0.88);
   line-height: 1.35;
 }
 
@@ -206,6 +219,11 @@
 
 .board-view .col-replies {
   font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(243, 238, 248, 0.62);
+}
+
+.board-view .board-table td:nth-child(4) {
   color: rgba(243, 238, 248, 0.62);
 }
 
