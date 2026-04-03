@@ -4,13 +4,13 @@
   "title": "Current Mission",
   "kind": "system",
   "status": "open",
-  "createdAt": "2026-03-20 15:30",
+  "createdAt": "2026-04-03 23:04",
   "posts": [
     {
       "id": "post-001",
       "author": "Renoria",
       "role": "System Owner",
-      "createdAt": "2026-04-03 22:45",
+      "createdAt": "2026-04-03 23:04",
       "content": [
         "Current objective: build a solid understanding of JavaScript from the ground up.",
         "Instead of approaching it in a purely theoretical way, I am integrating the learning process directly into a real system: the forum module of this project.",
