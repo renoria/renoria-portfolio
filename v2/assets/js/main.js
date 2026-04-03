@@ -42,6 +42,52 @@ async function loadMainLogs() {
 }
 
 // ========================
+// LOAD BOARDS
+// ========================
+
+async function loadBoards() {
+  const container = document.getElementById("boards-container");
+  if (!container) return;
+
+  try {
+    const response = await fetch("assets/data/boards.json");
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+    const groups = await response.json();
+
+    container.innerHTML = "";
+
+    groups.forEach((group) => {
+      const groupEl = document.createElement("div");
+      groupEl.className = "boards-group";
+
+      groupEl.innerHTML = `<h2 class="boards-group-title">${group.group}</h2>`;
+
+      group.boards.forEach((board) => {
+        const boardEl = document.createElement("a");
+        boardEl.href = "#";
+        boardEl.className = "board-row";
+        boardEl.innerHTML = `
+          <span class="board-name">${board.name}</span>
+          <span class="board-description">${board.description}</span>
+        `;
+        groupEl.appendChild(boardEl);
+      });
+
+      container.appendChild(groupEl);
+    });
+
+  } catch (error) {
+    console.error("Error loading boards:", error);
+    container.innerHTML = `
+      <div class="module-error">
+        <h2>Error</h2>
+        <p>Unable to load boards.</p>
+      </div>
+    `;
+  }
+}
+
+// ========================
 // MODULE VIEW LOADER
 // ========================
 
@@ -80,7 +126,9 @@ async function loadView(viewName, updateUrl = true) {
 
     const html = await response.text();
     moduleContainer.innerHTML = html;
-
+    
+    if (safeView === "boards") loadBoards();
+    
     updateTopbar(safeView);
 
     if (updateUrl) {
