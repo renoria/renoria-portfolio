@@ -270,14 +270,100 @@ async function loadBoardThreads(boardId, boardName, groupName) {
 // THREAD VIEW LOADER
 // ========================
 
-function loadThreadView(threadId, threadTitle, boardId, boardName, groupName) {
-  console.log("Load thread view:", {
-    threadId,
-    threadTitle,
-    boardId,
-    boardName,
-    groupName
-  });
+async function loadThreadView(threadId, threadTitle, boardId, boardName, groupName) {
+  try {
+    const response = await fetch("views/thread.html");
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+    const html = await response.text();
+    moduleContainer.innerHTML = html;
+
+    updateTopbar("boards");
+
+    const threadResponse = await fetch(`assets/data/threads/${threadId}.json`);
+    if (!threadResponse.ok) throw new Error(`HTTP error: ${threadResponse.status}`);
+
+    const threadData = await threadResponse.json();
+
+    const pathEl = document.getElementById("thread-path");
+    const titleEl = document.getElementById("thread-title");
+    const kindEl = document.getElementById("thread-kind");
+    const statusEl = document.getElementById("thread-status");
+    const createdEl = document.getElementById("thread-created");
+    const postsContainer = document.getElementById("posts-container");
+
+    const backBtn = document.getElementById("btn-back-board");
+    const homeBoardsBtn = document.getElementById("btn-home-boards");
+    const newReplyBtn = document.getElementById("btn-new-reply");
+
+    if (pathEl) {
+      pathEl.innerHTML = `<span class="path-dim">Boards</span> / ${groupName} / ${boardName}`;
+    }
+
+    if (titleEl) titleEl.textContent = threadData.title.toUpperCase();
+    if (kindEl) kindEl.textContent = threadData.kind || "thread";
+    if (statusEl) statusEl.textContent = threadData.status || "open";
+    if (createdEl) createdEl.innerHTML = formatBoardDate(threadData.createdAt);
+
+    if (backBtn) {
+      backBtn.addEventListener("click", () => {
+        loadBoardView(boardId, boardName, groupName);
+      });
+    }
+
+    if (homeBoardsBtn) {
+      homeBoardsBtn.addEventListener("click", () => {
+        loadView("boards");
+      });
+    }
+
+    if (newReplyBtn) {
+      newReplyBtn.addEventListener("click", () => {
+        console.log(`New reply requested for thread: ${threadId}`);
+      });
+    }
+
+    if (postsContainer) {
+      postsContainer.innerHTML = "";
+
+      threadData.posts.forEach((post, index) => {
+        const article = document.createElement("article");
+        article.className = "forum-post";
+
+        const paragraphs = Array.isArray(post.content)
+          ? post.content.map(p => `<p>${p}</p>`).join("")
+          : `<p>${post.content}</p>`;
+
+        article.innerHTML = `
+          <aside class="post-side">
+            <div class="post-author">${post.author}</div>
+            <div class="post-role">${post.role || "User"}</div>
+          </aside>
+
+          <div class="post-main">
+            <div class="post-topbar">
+              <span class="post-date">${formatBoardDate(post.createdAt)}</span>
+              <span class="post-id">#${index + 1}</span>
+            </div>
+
+            <div class="post-content">
+              ${paragraphs}
+            </div>
+          </div>
+        `;
+
+        postsContainer.appendChild(article);
+      });
+    }
+  } catch (error) {
+    console.error("Error loading thread view:", error);
+    moduleContainer.innerHTML = `
+      <div class="module-error">
+        <h2>Module error</h2>
+        <p>Unable to load thread view.</p>
+      </div>
+    `;
+  }
 }
 
 // ========================
