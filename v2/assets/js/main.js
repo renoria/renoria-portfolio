@@ -278,28 +278,41 @@ async function loadBoardThreads(boardId, boardName, groupName) {
 
       row.innerHTML = `
   <td data-label="Author">
-    <div>
+    <div class="mobile-value">
       <div class="author-name">${thread.author}</div>
       <div class="author-date">${formatBoardDate(thread.createdAt)}</div>
     </div>
   </td>
+
   <td data-label="Status" class="col-status">
-    <span class="status-dot ${thread.status}"></span>
+    <div class="mobile-value status-value">
+      <span class="status-dot ${thread.status}"></span>
+      <span class="status-text">${thread.status}</span>
+    </div>
   </td>
+
   <td data-label="Thread">
-    ${thread.important ? '<span class="thread-flag flag-important">!</span>' : ""}
-    <span class="thread-title">${thread.title}</span>
+    <div class="mobile-value thread-value">
+      ${thread.important ? '<span class="thread-flag flag-important">!</span>' : ""}
+      <span class="thread-title">${thread.title}</span>
+    </div>
   </td>
-  <td data-label="Replies" class="col-replies">${thread.replies}</td>
+
+  <td data-label="Replies" class="col-replies">
+    <div class="mobile-value">
+      ${thread.replies}
+    </div>
+  </td>
+
   <td data-label="Last Activity">
-    ${
-      thread.lastReply && lastReplyDate
-        ? `<div>
-             <div class="last-reply-name">${thread.lastReply.author}</div>
-             <div class="last-reply-date">${formatBoardDate(lastReplyDate)}</div>
-           </div>`
-        : `<span class="no-reply">—</span>`
-    }
+    <div class="mobile-value">
+      ${
+        thread.lastReply && lastReplyDate
+          ? `<div class="last-reply-name">${thread.lastReply.author}</div>
+             <div class="last-reply-date">${formatBoardDate(lastReplyDate)}</div>`
+          : `<span class="no-reply">—</span>`
+      }
+    </div>
   </td>
 `;
 
