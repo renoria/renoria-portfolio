@@ -209,6 +209,10 @@
   background: #8e7aa8;
 }
 
+.board-view .status-text {
+  display: none;
+}
+
 .board-view .col-replies {
   font-size: 0.70rem;
   font-weight: 400;
