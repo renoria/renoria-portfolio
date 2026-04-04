@@ -97,5 +97,9 @@ function runTerminalBootSequence() {
   addTerminalLog("tip", "Tip: use the navigation panel to explore site modules.", { speed: 18, delayAfter: 200 });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  runTerminalBootSequence();
+});
+
 window.addTerminalLog = addTerminalLog;
 window.runTerminalBootSequence = runTerminalBootSequence;
