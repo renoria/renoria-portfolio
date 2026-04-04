@@ -96,3 +96,6 @@ function runTerminalBootSequence() {
   addTerminalLog("sys", "System status: ONLINE", { speed: 24, delayAfter: 450 });
   addTerminalLog("tip", "Tip: use the navigation panel to explore site modules.", { speed: 18, delayAfter: 200 });
 }
+
+window.addTerminalLog = addTerminalLog;
+window.runTerminalBootSequence = runTerminalBootSequence;
