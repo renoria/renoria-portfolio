@@ -66,15 +66,6 @@ body {
   transform: translate(var(--index-logo-offset-x), var(--index-logo-offset-y));
 }
 
-.logo-box .index-logo--day,
-:root[data-theme="day"] .logo-box .index-logo--night {
-  visibility: hidden;
-}
-
-:root[data-theme="day"] .logo-box .index-logo--day {
-  visibility: visible;
-}
-
 .intro {
   margin: 0;
   padding-top: 10px;

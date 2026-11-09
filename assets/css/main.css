@@ -501,10 +501,10 @@ body {
   user-select: none;
 }
 
-/* The day v2 canvas has different dimensions and transparent margins. */
+/* The day v3 shares the night canvas and size; center its visible drawing. */
 .main-background-logo .home-emblem--day {
-  --home-logo-offset-x: -0.545072%;
-  --home-logo-offset-y: -0.313743%;
+  --home-logo-offset-x: 0.186952%;
+  --home-logo-offset-y: 1.298752%;
 }
 
 .main-background-logo .home-emblem--day,
