@@ -1,3 +1,46 @@
+:root {
+  --texture-tile-width: 152.46px;
+}
+
+.index-background,
+.dashboard-background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  isolation: isolate;
+  /* Clip the oversized decoration without creating a hidden scroll container. */
+  overflow: clip;
+}
+
+.frame-surround {
+  position: relative;
+}
+
+/* Cut out the rounded frame: its translucent panel must not reveal the texture. */
+.frame-surround::before {
+  content: "";
+  position: absolute;
+  inset: -100vmax;
+  padding: 100vmax;
+  border-radius: calc(100vmax + 28px);
+  background: var(--texture-image) repeat;
+  background-size: var(--texture-tile-width) auto;
+  opacity: var(--texture-opacity);
+  pointer-events: none;
+  z-index: -1;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
 .frame {
   width: 100%;
   max-width: 940px;
@@ -7,7 +50,7 @@
   backdrop-filter: blur(10px);
   box-shadow:
     0 14px 50px var(--shadow),
-    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+    0 0 0 1px var(--inset-highlight) inset;
   overflow: hidden;
 }
 
@@ -21,6 +64,85 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.theme-toggle {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  min-height: 28px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--button-text);
+  cursor: pointer;
+}
+
+/* Keep the compact border while providing a comfortable touch target. */
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 44px);
+  height: max(100%, 44px);
+  transform: translate(-50%, -50%);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-soft);
+}
+
+.theme-toggle .theme-icon--sun,
+:root[data-theme="day"] .theme-toggle .theme-icon--moon {
+  display: none;
+}
+
+:root[data-theme="day"] .theme-toggle .theme-icon--sun {
+  display: block;
+}
+
+/* Login keeps its palette and keyboard outline without underlines. */
+.login-button,
+.login-button:visited,
+.login-button:hover,
+.login-button:focus,
+.login-button:active {
+  color: var(--button-text);
+  text-decoration: none;
+}
+
+.login-button:hover {
+  color: var(--accent-text);
+}
+
+/* Specificity also covers module fields that have their own focus rules. */
+html :is(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 .status-wrap {
@@ -34,10 +156,15 @@
   height: 10px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 14px rgba(197, 167, 255, 0.4);
+  box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.4);
 }
 
 .login-placeholder {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--soft-line);
+  background: var(--surface-glaze);
+  font-size: 0.75rem;
 }
 
 .section-title {
@@ -68,18 +195,18 @@
 }
 
 .log::-webkit-scrollbar-thumb {
-  background: rgba(197, 167, 255, 0.4);
+  background: rgba(var(--accent-rgb), 0.4);
   border-radius: 10px;
 }
 
 .log::-webkit-scrollbar-thumb:hover {
-  background: rgba(197, 167, 255, 0.7);
+  background: rgba(var(--accent-rgb), 0.7);
 }
 
 .entry {
   padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-glaze);
   border: 1px solid var(--soft-line);
 }
 
@@ -103,9 +230,9 @@
   display: inline-flex;
   padding: 3px 7px;
   border-radius: 999px;
-  border: 1px solid rgba(197, 167, 255, 0.16);
-  background: rgba(197, 167, 255, 0.08);
-  color: var(--accent);
+  border: 1px solid rgba(var(--accent-rgb), 0.16);
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent-text);
   font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -121,14 +248,14 @@
   padding: 12px 16px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-glaze);
   color: var(--text);
   text-decoration: none;
   transition: 160ms ease;
 }
 
 .pill:hover {
-  background: rgba(197, 167, 255, 0.08);
-  border-color: rgba(197, 167, 255, 0.22);
+  background: var(--surface-pill-hover);
+  border-color: rgba(var(--accent-rgb), 0.22);
   transform: translateY(-1px);
 }

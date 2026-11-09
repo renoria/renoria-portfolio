@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renoria</title>
 
-  <link rel="icon" type="image/svg+xml" href="assets/icons/Logo_R.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/Logo_R_liscia.svg">
 
+  <script src="assets/js/theme.js"></script>
+  <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/index.css">
 
@@ -15,46 +17,63 @@
 </head>
 
 <body>
-  <main class="frame">
-    <div class="topbar">
-      <div class="status-wrap">
-        <div class="dot"></div>
-        <span>Renoria</span>
-      </div>
+  <div class="index-background">
+    <div class="frame-surround">
+      <main class="frame">
+        <div class="topbar">
+          <div class="status-wrap">
+            <div class="dot"></div>
+            <span>Renoria</span>
+          </div>
 
-      <div class="login-placeholder">
-        <a href="main.html" class="login-button">Enter</a>
-      </div>
+          <div class="topbar-actions">
+            <button type="button" class="theme-toggle" data-theme-toggle lang="it"
+                    aria-label="Tema Notte attivo. Passa a Giorno" title="Passa a Giorno">
+              <svg class="theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/>
+              </svg>
+              <svg class="theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+              </svg>
+            </button>
+            <div class="login-placeholder">
+              <a href="main.html" class="login-button">Enter</a>
+            </div>
+          </div>
+        </div>
+
+        <section class="content">
+          <div class="left">
+            <div class="logo-box">
+              <img class="index-logo--night" src="assets/img/Logo_Full_Renoria_notte.svg" width="887" height="887" alt="Logo Renoria" draggable="false">
+              <img class="index-logo--day" src="assets/img/Logo_Full_Renoria_giorno.svg" width="887" height="887" alt="Logo Renoria" draggable="false">
+            </div>
+
+            <p class="intro">
+              A personal digital space in gradual construction.
+              Portfolio, skills, project threads, and system modules will surface here over time.
+            </p>
+
+            <div class="note">
+              This page is a temporary prelude.<br>
+              The full interface is currently being assembled.
+            </div>
+
+            <div class="footer">
+              <a class="pill" href="mailto:hello@renoria.dev">
+                hello@renoria.dev
+              </a>
+            </div>
+          </div>
+
+          <div class="right">
+            <h2 class="section-title">Current log</h2>
+            <div class="log" id="log-container"></div>
+          </div>
+        </section>
+      </main>
     </div>
-
-    <section class="content">
-      <div class="left">
-        <div class="logo-box">
-          <img src="assets/img/Logo_Full.png" alt="Logo Renoria">
-        </div>
-
-        <p class="intro">
-          A personal digital space in gradual construction.
-          Portfolio, skills, project threads, and system modules will surface here over time.
-        </p>
-
-        <div class="note">
-          This page is a temporary prelude.<br>
-          The full interface is currently being assembled.
-        </div>
-
-        <div class="footer">
-          <a class="pill" href="mailto:hello@renoria.dev">
-            hello@renoria.dev
-          </a>
-        </div>
-      </div>
-
-      <div class="right">
-        <h2 class="section-title">Current log</h2>
-        <div class="log" id="log-container"></div>
-      </div>
-    </section>
-  </main>
+  </div>
 </body>
 </html>

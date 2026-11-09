@@ -23,7 +23,7 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: rgba(243, 238, 248, 0.94);
+  color: var(--text-heading);
 }
 
 .boards-group {
@@ -42,8 +42,8 @@
   font-weight: 400;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: #b796ff;
-  border-bottom: 1px solid rgba(197, 167, 255, 0.08);
+  color: var(--section-accent);
+  border-bottom: 1px solid var(--forum-divider);
 }
 
 .boards-group-list {
@@ -58,7 +58,7 @@
   gap: 18px;
 
   padding: 12px 0;
-  border-bottom: 1px solid rgba(197, 167, 255, 0.05);
+  border-bottom: 1px solid var(--forum-divider-faint);
 
   text-decoration: none;
   color: inherit;
@@ -80,14 +80,14 @@
 }
 
 .board-bullet {
-  color: #b796ff;
+  color: var(--section-accent);
   font-size: 0.88rem;
   line-height: 1;
   flex-shrink: 0;
 }
 
 .board-name {
-  color: rgba(243, 238, 248, 0.92);
+  color: var(--text-strong);
   font-size: 0.80rem;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -96,13 +96,13 @@
 }
 
 .board-slash {
-  color: rgba(183, 174, 200, 0.55);
+  color: var(--text-slash);
   font-size: 0.78rem;
   flex-shrink: 0;
 }
 
 .board-description {
-  color: rgba(243, 238, 248, 0.48);
+  color: var(--text-description);
   font-size: 0.74rem;
   font-style: italic;
   line-height: 1.35;
@@ -120,7 +120,7 @@
   gap: 6px;
   flex-shrink: 0;
 
-  color: rgba(243, 238, 248, 0.62);
+  color: var(--text-meta);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.70rem;
   line-height: 1;
@@ -132,7 +132,7 @@
 }
 
 .board-meta-separator {
-  color: rgba(243, 238, 248, 0.28);
+  color: var(--text-separator);
   font-size: 0.52rem;
 }
 
@@ -170,4 +170,9 @@
   justify-content: flex-end;
   text-align: right;
 }
+}
+
+/* Day interaction colors share the dashboard palette. */
+:root[data-theme="day"] .board-row:is(:hover, :focus-visible) {
+  background: var(--surface-pill-hover);
 }
