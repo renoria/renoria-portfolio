@@ -32,7 +32,7 @@ async function loadMainLogs() {
   } catch (error) {
     console.error("Error loading main logs:", error);
 
-    terminalLog("sys", "Main log feed unavailable.", {
+    terminalLog("sys", "Flusso dei log della dashboard non disponibile.", {
       speed: 18,
       delayAfter: 180
     });
@@ -74,7 +74,7 @@ function terminalLog(type, message, options = {}) {
 }
 
 function logTip(message) {
-  terminalLog("tip", `Tip: ${message}`);
+  terminalLog("tip", `Suggerimento: ${message}`);
 }
 
 async function openBoardFromHash(boardId) {
@@ -94,13 +94,13 @@ async function openBoardFromHash(boardId) {
     }
 
     console.warn(`Board not found for hash: ${boardId}`);
-    terminalLog("sys", `Requested board not found: ${boardId}`, {
+    terminalLog("sys", `Board richiesta non trovata: ${boardId}`, {
       speed: 18,
       delayAfter: 180
     });
   } catch (error) {
     console.error("Error opening board from hash:", error);
-    terminalLog("sys", "Unable to restore board from URL hash.", {
+    terminalLog("sys", "Impossibile ripristinare la board dall’indirizzo URL.", {
       speed: 18,
       delayAfter: 180
     });
@@ -203,7 +203,7 @@ async function loadBoards() {
   } catch (error) {
     console.error("Error loading boards:", error);
 
-    terminalLog("sys", "Board index unavailable.", {
+    terminalLog("sys", "Indice delle board non disponibile.", {
       speed: 18,
       delayAfter: 180
     });
@@ -239,7 +239,7 @@ async function loadBoardView(boardId, boardName, groupName) {
   } catch (error) {
     console.error("Error loading board view:", error);
 
-    terminalLog("sys", "Unable to load board view.", {
+    terminalLog("sys", "Impossibile caricare la vista della board.", {
       speed: 18,
       delayAfter: 180
     });
@@ -247,7 +247,7 @@ async function loadBoardView(boardId, boardName, groupName) {
     moduleContainer.innerHTML = `
       <div class="module-error">
         <h2>Module error</h2>
-        <p>Unable to load board view.</p>
+        <p>Impossibile caricare la vista della board.</p>
       </div>
     `;
   }
@@ -283,11 +283,11 @@ async function loadBoardThreads(boardId, boardName, groupName) {
 
   if (newThreadBtn) {
     newThreadBtn.addEventListener("click", () => {
-      terminalLog("sys", `Thread creation requested in board: ${boardName}`, {
+      terminalLog("sys", `Creazione di un thread richiesta nella board: ${boardName}`, {
         speed: 18,
         delayAfter: 180
       });
-      logTip("thread creation module not available in current build");
+      logTip("il modulo di creazione dei thread non è disponibile nella versione attuale");
       console.log(`New thread requested for board: ${boardId}`);
     });
   }
@@ -304,7 +304,7 @@ async function loadBoardThreads(boardId, boardName, groupName) {
     container.innerHTML = "";
 
     if (threads.length === 0) {
-      terminalLog("sys", `No threads found in board: ${boardName}`, {
+      terminalLog("sys", `Nessun thread trovato nella board: ${boardName}`, {
         speed: 18,
         delayAfter: 180
       });
@@ -371,7 +371,7 @@ async function loadBoardThreads(boardId, boardName, groupName) {
   } catch (error) {
     console.error("Error loading threads:", error);
 
-    terminalLog("sys", `Unable to load threads for board: ${boardName}`, {
+    terminalLog("sys", `Impossibile caricare i thread della board: ${boardName}`, {
       speed: 18,
       delayAfter: 180
     });
@@ -434,7 +434,7 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
 
     if (newReplyBtn) {
       newReplyBtn.addEventListener("click", () => {
-        terminalLog("sys", `Reply composer opened for thread: ${threadData.title}`, {
+        terminalLog("sys", `Editor di risposta aperto per il thread: ${threadData.title}`, {
           speed: 18,
           delayAfter: 180
         });
@@ -492,7 +492,7 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
         const text = textarea.value.trim();
 
         if (!text) {
-          terminalLog("sys", "Reply aborted: empty input.", {
+          terminalLog("sys", "Risposta annullata: testo vuoto.", {
             speed: 18,
             delayAfter: 160
           });
@@ -501,11 +501,11 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
 
         console.log("Mock reply:", text);
 
-        terminalLog("sys", `Reply submitted to thread: ${threadData.title}`, {
+        terminalLog("sys", `Risposta inviata al thread: ${threadData.title}`, {
           speed: 18,
           delayAfter: 180
         });
-        logTip("live post submission will be handled by backend in a future build");
+        logTip("l’invio effettivo dei messaggi sarà gestito dal backend in una versione futura");
 
         textarea.value = "";
 
@@ -518,7 +518,7 @@ async function loadThreadView(threadId, threadTitle, boardId, boardName, groupNa
   } catch (error) {
     console.error("Error loading thread view:", error);
 
-    terminalLog("sys", `Unable to load thread view: ${threadTitle}`, {
+    terminalLog("sys", `Impossibile caricare la vista del thread: ${threadTitle}`, {
       speed: 18,
       delayAfter: 180
     });
@@ -599,7 +599,7 @@ async function loadView(viewName, updateUrl = true) {
   } catch (error) {
     console.error(error);
 
-    terminalLog("sys", `Unable to load requested module: ${safeView}`, {
+    terminalLog("sys", `Impossibile caricare il modulo richiesto: ${safeView}`, {
       speed: 18,
       delayAfter: 180
     });
@@ -647,7 +647,7 @@ window.addEventListener("hashchange", () => {
 
 console.log("Renoria main interface initialized.");
 
-terminalLog("sys", "Main interface initialized.", {
+terminalLog("sys", "Interfaccia principale inizializzata.", {
   speed: 18,
   delayAfter: 180
 });

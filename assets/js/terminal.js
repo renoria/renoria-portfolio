@@ -89,12 +89,12 @@ function runTerminalBootSequence() {
   if (terminalState.bootCompleted) return;
   terminalState.bootCompleted = true;
 
-  addTerminalLog("sys", "Boot sequence initiated...", { speed: 24, delayAfter: 350 });
-  addTerminalLog("sys", "Loading core modules...", { speed: 22, delayAfter: 300 });
-  addTerminalLog("sys", "Mounting interface panels...", { speed: 20, delayAfter: 280 });
-  addTerminalLog("sys", "Navigation map linked.", { speed: 18, delayAfter: 240 });
-  addTerminalLog("sys", "System status: ONLINE", { speed: 24, delayAfter: 450 });
-  addTerminalLog("tip", "Tip: use the navigation panel to explore site modules.", { speed: 18, delayAfter: 200 });
+  addTerminalLog("sys", "Sequenza di avvio iniziata...", { speed: 24, delayAfter: 350 });
+  addTerminalLog("sys", "Caricamento dei moduli principali...", { speed: 22, delayAfter: 300 });
+  addTerminalLog("sys", "Preparazione dei pannelli dell’interfaccia...", { speed: 20, delayAfter: 280 });
+  addTerminalLog("sys", "Mappa di navigazione collegata.", { speed: 18, delayAfter: 240 });
+  addTerminalLog("sys", "Stato del sistema: ONLINE", { speed: 24, delayAfter: 450 });
+  addTerminalLog("tip", "Suggerimento: usa il pannello di navigazione per esplorare i moduli del sito.", { speed: 18, delayAfter: 200 });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
