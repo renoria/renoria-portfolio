@@ -1,56 +1,87 @@
-[{
+[
+  {
+    "timestamp": "2026-11-08 16:20",
+    "type": "dev",
+    "text": "Renoria cambia lingua. I testi introduttivi dell’index, i log e i messaggi del terminale passano all’italiano. Anche questo spazio comincia a parlare più come me."
+  },
+  {
+    "timestamp": "2026-11-08 16:20",
+    "type": "dev",
+    "text": "Nuovi emblemi nella Home. Il calderone lascia spazio a un gatto raccolto in una spirale di foglie e connessioni, con una veste per il Giorno e una per la Notte."
+  },
+  {
+    "timestamp": "2026-11-08 16:20",
+    "type": "dev",
+    "text": "Sole e luna trovano posto nell’intestazione. Un solo pulsante cambia il tema e ricorda la scelta durante la navigazione e alle visite successive."
+  },
+  {
+    "timestamp": "2026-11-08 10:00",
+    "type": "dev",
+    "text": "Il tema Giorno prende forma. Avorio, moka e ambra si distribuiscono su superfici appena diverse, con bordi caldi e un Terminale dal tono più profondo."
+  },
+  {
+    "timestamp": "2026-11-08 09:00",
+    "type": "dev",
+    "text": "Renoria ha una nuova luce. Arrivano i temi Giorno e Notte, il primo passo di un restyling che intreccia codice, legno, piante e gatti."
+  },
+  {
+    "timestamp": "2026-11-07 21:00",
+    "type": "dev",
+    "text": "Una trama di glifi accompagna ora index e dashboard. L’opacità segue il tema, per trovare il giusto equilibrio tra dettagli e spazio vuoto."
+  },
+{
   "timestamp": "2026-04-13 21:37",
   "type": "build",
-  "text": "Forum backend structure completed. Dynamic board, thread and reply handling now active through PHP and database integration."
+  "text": "Struttura backend del forum completata. Gestione dinamica di board, thread e risposte attiva grazie all’integrazione tra PHP e database."
 },
   {
   "timestamp": "2026-04-04 21:49",
   "type": "build",
-  "text": "Terminal module deployed. Boot sequence and system logging active."
+  "text": "Modulo terminale pubblicato. Sequenza di avvio e log di sistema attivi."
     },
   {
   "timestamp": "2026-04-03 22:30",
   "type": "build",
-  "text": "Forum module initialized. First thread and post successfully deployed."
+  "text": "Modulo forum inizializzato. Primo thread e primo post pubblicati correttamente."
     },
     {
     "timestamp": "2026-03-20 13:48",
     "type": "build",
-    "text": "Dashboard shell completed. Core layout stabilized."
+    "text": "Struttura della dashboard completata. Layout principale stabilizzato."
   },
   {
     "timestamp": "2026-03-19 12:13",
     "type": "system",
-    "text": "Log structure upgraded to ISO-8601 format. Event typing enabled for Renoria interface v2."
+    "text": "Log aggiornati al formato ISO-8601. Classificazione degli eventi per tipo attivata per l’interfaccia Renoria v2."
   },
   {
     "timestamp": "2026-03-18 21:25",
     "type": "system",
-    "text": "System structure stabilized. Core layout and component order defined for Renoria interface v2."
+    "text": "Struttura del sistema stabilizzata. Layout principale e ordine dei componenti definiti per l’interfaccia Renoria v2."
   },
   {
     "timestamp": "2026-03-18 13:09",
     "type": "network",
-    "text": "Custom domains renoria.dev and renoria.it linked to the Renoria node. DNS routing operational."
+    "text": "Domini personalizzati renoria.dev e renoria.it collegati al nodo Renoria. Routing DNS operativo."
   },
   {
     "timestamp": "2026-03-17 21:21",
     "type": "dev",
-    "text": "Logo assets integrated. Visual identity module attached to the Renoria node."
+    "text": "Asset del logo integrati. Modulo di identità visiva collegato al nodo Renoria."
   },
   {
     "timestamp": "2026-03-17 10:50",
     "type": "dev",
-    "text": "Portfolio shell in development. Additional modules pending."
+    "text": "Struttura del portfolio in sviluppo. Altri moduli in attesa."
   },
   {
     "timestamp": "2026-03-17 09:21",
     "type": "network",
-    "text": "Primary contact gateway connected to Renoria node."
+    "text": "Canale di contatto principale collegato al nodo Renoria."
   },
   {
     "timestamp": "2026-03-16 22:46",
     "type": "system",
-    "text": "Domain secured and public node initialized."
+    "text": "Dominio registrato e nodo pubblico inizializzato."
   }
 ]

@@ -7,7 +7,7 @@ async function loadLogs(targetId = "log-container", dataPath = "assets/data/logs
     const response = await fetch(dataPath);
 
     if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
+      throw new Error(`Errore HTTP: ${response.status}`);
     }
 
     const logs = await response.json();
@@ -31,7 +31,7 @@ async function loadLogs(targetId = "log-container", dataPath = "assets/data/logs
       logContainer.appendChild(entry);
     });
   } catch (error) {
-    console.error("Error loading logs:", error);
+    console.error("Errore nel caricamento dei log:", error);
 
     logContainer.innerHTML = `
       <div class="entry">
@@ -40,7 +40,7 @@ async function loadLogs(targetId = "log-container", dataPath = "assets/data/logs
           <span class="log-type">ERROR</span>
         </div>
         <div class="entry-text">
-          Unable to load current log data.
+          Impossibile caricare i log attuali.
         </div>
       </div>
     `;
